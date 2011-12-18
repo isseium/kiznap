@@ -1,4 +1,8 @@
 Rikuzen::Application.routes.draw do
+  # http://example.com/kiznamp_image/20111219
+  # resources :kiznap_image, :constraints => {:id => /[0-9]{8,8}/}
+  match 'kiznap_image/:id(.:format)' => 'api#kiznap_image', :constraints => {:id => /[0-9]{8,8}/}, :defaults => { :format => 'json' }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
